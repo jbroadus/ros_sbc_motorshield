@@ -64,7 +64,7 @@ void Motor::set_config(const std_msgs::UInt8::ConstPtr& msg)
 
 void Motor::set_pwm(unsigned int speed)
 {
-  unsigned int pwm_duty = motor_speed;
+  unsigned int pwm_duty = speed;
   if (pwm_duty > pwm_range)
     pwm_duty = pwm_range;
   ROS_INFO("Setting PWM %d to %u\n", pins->pwm, pwm_duty);
